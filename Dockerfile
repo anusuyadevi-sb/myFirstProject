@@ -4,4 +4,4 @@
 #ENTRYPOINT ["java","-jar","/myfirstapplication.jar"]
 FROM anudevi14/myfirstapplication
 #RUN pip install redis
-ADD /myFirstProject /app
+#ADD /myFirstProject /app
