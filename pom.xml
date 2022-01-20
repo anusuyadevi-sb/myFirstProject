@@ -36,7 +36,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>myfirstapplication</finalName>
+		<finalName>myfirstapp:1.0.0</finalName>
 	</build>
 
 </project>
