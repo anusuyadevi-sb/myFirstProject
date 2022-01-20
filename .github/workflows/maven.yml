@@ -31,5 +31,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: anudevi14/myfirstapplication:latest
+          tags: anudevi14/myfirstapplication:v5
 
