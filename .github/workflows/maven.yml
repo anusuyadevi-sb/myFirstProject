@@ -1,37 +1,67 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+  Skip to content
+    Search or jump to…
+    Pull requests
+    Issues
+    Marketplace
+    Explore
+    
+    @anusuyadevi-sb
+    anusuyadevi-sb
+    /
+    myFirstProject
+    Public
+    Code
+    Issues
+    Pull requests
+    2
+    Actions
+    Projects
+    Wiki
+    Security
+    Insights
+    Settings
+    myFirstProject/.github/workflows/maven.yml
+    @anusuyadevi-sb
+    anusuyadevi-sb Update maven.yml
+    Latest commit 973abee 16 minutes ago
+    History
+    1 contributor
+    37 lines (30 sloc)  974 Bytes
 
-name: cicd flow
+  # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+  # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-on:
-  push:
-    branches: [ Master ]
-  pull_request:
-    branches: [ Master ]
+  name: cicd flow
 
-jobs:
-  build:
+  on:
+    push:
+      branches: [ Master ]
+    pull_request:
+      branches: [ Master ]
 
-    runs-on: ubuntu-latest
+  jobs:
+    build:
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn clean install
-    - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v5
-      with:
-        image: anudevi14/myfirstapplication
-        tags: latest
-        registry: docker.io
-        dockerfile: Dockerfile
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+        - name: Set up JDK 11
+          uses: actions/setup-java@v2
+          with:
+            java-version: '11'
+            distribution: 'temurin'
+            cache: maven
+        - name: Build with Maven
+          run: mvn clean install
+        - name: Build & push Docker image
+          uses: mr-smithers-excellent/docker-build-push@v5
+          with:
+            image: anudevi14/myfirstapplication
+            tags: v4
+            registry: docker.io
+            dockerfile: Dockerfile
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
 
 
