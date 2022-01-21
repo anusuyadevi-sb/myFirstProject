@@ -27,6 +27,6 @@
             image: anudevi14/myfirstapplication
             tags: v7
             registry: docker.io
-            dockerfile: Dockerfile1
+            dockerfile: Dockerfile
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
