@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyFirstProjectApplication {
 	@GetMapping("/Welcome")
 	public String welcome(){
-		return "Well done Anu....123";
+		return "test demo";
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(MyFirstProjectApplication.class, args);
