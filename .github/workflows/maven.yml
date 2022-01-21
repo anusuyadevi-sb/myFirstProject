@@ -25,7 +25,7 @@
           uses: mr-smithers-excellent/docker-build-push@v5
           with:
             image: anudevi14/myfirstapplication
-            tags: v7
+            tags: v8
             registry: docker.io
             dockerfile: Dockerfile
             username: ${{ secrets.DOCKER_USERNAME }}
